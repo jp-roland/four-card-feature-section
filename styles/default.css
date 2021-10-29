@@ -6,8 +6,18 @@ body {
 
 .div1 {
     text-align: center;
-    margin: 5.125rem 1.96875rem 4.6875rem 1.96875rem;
+    margin: 5.125rem 1.96875rem 0 1.96875rem;
     color: hsl(234, 12%, 34%);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'first-card' 'second-card' 'third-card' 'fourth-card';
+    grid-gap: 1.5rem;
+    padding: 2rem;
+    margin-top: 2.625rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .text1 {
@@ -25,6 +35,7 @@ body {
     color: hsl(229, 6%, 66%);
     font-size: 15px;
     line-height: 1.7;
+    margin: 1rem 0 0 0;
 }
 
 .text4 {
@@ -43,7 +54,7 @@ body {
 .imgdiv {
     display: flex;
     justify-content: flex-end;
-    padding: 1.75rem;
+    padding: 1.8125rem;
 }
 
 img {
@@ -55,28 +66,81 @@ img {
     border-top-width: 4px;
     border-top-style: solid;
     background-color: white;
-    /* width: 19.5rem; */
-    margin: 1.5rem 1.96875rem 1.5rem 1.96875rem;
+    margin: 0;
     box-shadow: 0 10px 30px hsl(228, 27%, 85%);
 }
 
 #card1 {
     border-color: hsl(180, 62%, 55%);
+    grid-area: first-card;
 }
 
 #card2 {
     border-color: hsl(0, 78%, 62%);
+    grid-area: second-card;
 }
 
 #card3 {
     border-color: hsl(34, 97%, 64%);
+    grid-area: third-card;
 }
 
 #card4 {
     border-color: hsl(212, 86%, 64%);
+    grid-area: fourth-card;
 }
 
 footer {
     font-size: 15px;
     text-align: center;
+}
+
+@media only screen and (min-width: 1050px) {
+    .grid-container {
+        grid-template-areas: 'first-card second-card fourth-card'
+                             'first-card third-card fourth-card';
+        max-width: 1110px;
+        margin: 1.75rem auto 0 auto;
+        grid-gap: 1.875rem;
+    }
+
+    .card {
+        max-width: 350px;
+        height: 246px;
+    }
+
+    .text1 {
+        font-size: 36px;
+    }
+
+    .text2 {
+        font-size: 36px;
+    }
+
+    .text3 {
+        margin-top: 0.875rem;
+        font-size: 15.2px;
+    }
+
+    .text4 {
+        margin: 1.6875rem auto 0 2rem;
+    }
+
+    .text5 {
+        margin: 0.5rem 2rem 0 2rem;
+    }
+
+    .div1 {
+        margin: 4.875rem auto 0 auto;
+        max-width: 550px;
+    }
+
+    img {
+        width: 64px;
+    }
+
+    .imgdiv {
+        padding: 2rem;
+        margin-top: 0.4375rem;
+    }
 }
